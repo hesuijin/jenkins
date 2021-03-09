@@ -15,6 +15,6 @@ public class Jenkins {
 
     @GetMapping("demo")
     public String jenkinsDemo(){
-        return "hello jenkins , think";
+        return "hello jenkins , think ";
     }
 }
