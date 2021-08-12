@@ -15,6 +15,9 @@ public class Jenkins {
 
     @GetMapping("demo")
     public String jenkinsDemo(){
-        return "hello jenkins , think !!!!!";
+        System.out.println("测试代码逻辑1");
+        System.out.println("测试代码逻辑2");
+        System.out.println("测试代码逻辑3");
+        return "hello jenkins , think ! ";
     }
 }
