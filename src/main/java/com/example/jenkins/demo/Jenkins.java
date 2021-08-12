@@ -1,5 +1,6 @@
 package com.example.jenkins.demo;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -13,14 +14,23 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/jenkins")
 public class Jenkins {
 
+    @Value("${remote.name}")
+    private String remoteName;
+
     @GetMapping("demo")
     public String jenkinsDemo(){
-        System.out.println("测试代码逻辑1");
-        System.out.println("测试代码逻辑2");
-        System.out.println("测试代码逻辑3");
-        int a = 10;
-        int b = 10;
-        int c = a + b;
         return "hello jenkins , think ! ";
     }
+
+
+    /**
+     * 测试远程debug
+     * @return
+     */
+    @GetMapping("remoteTest")
+    public String remoteTest(){
+        String remoteNameTemp = remoteName;
+        return remoteNameTemp;
+    }
+
 }
