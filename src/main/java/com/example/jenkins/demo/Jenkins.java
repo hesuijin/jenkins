@@ -18,6 +18,9 @@ public class Jenkins {
         System.out.println("测试代码逻辑1");
         System.out.println("测试代码逻辑2");
         System.out.println("测试代码逻辑3");
+        int a = 10;
+        int b = 10;
+        int c = a + b;
         return "hello jenkins , think ! ";
     }
 }
