@@ -27,7 +27,10 @@ public class Jenkins {
         Row row;
         row = sheet.createRow(0);
         row.createCell(0).setCellValue("hesuijin");
-        return "hello jenkins , think ! ";
+
+        String tmpDir = System.getProperty("java.io.tmpdir");
+        return tmpDir;
+//        return "hello jenkins , think ! ";
     }
 
 
