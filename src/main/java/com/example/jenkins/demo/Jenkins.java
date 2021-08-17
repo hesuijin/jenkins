@@ -1,5 +1,6 @@
 package com.example.jenkins.demo;
 
+import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.springframework.beans.factory.annotation.Value;
@@ -23,6 +24,9 @@ public class Jenkins {
     public String jenkinsDemo(){
         SXSSFWorkbook workbook = new SXSSFWorkbook(1000);
         Sheet sheet = workbook.createSheet("我是sheet名称");
+        Row row;
+        row = sheet.createRow(0);
+        row.createCell(0).setCellValue("hesuijin");
         return "hello jenkins , think ! ";
     }
 
