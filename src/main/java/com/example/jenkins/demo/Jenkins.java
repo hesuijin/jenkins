@@ -1,5 +1,7 @@
 package com.example.jenkins.demo;
 
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,6 +21,8 @@ public class Jenkins {
 
     @GetMapping("demo")
     public String jenkinsDemo(){
+        SXSSFWorkbook workbook = new SXSSFWorkbook(1000);
+        Sheet sheet = workbook.createSheet("我是sheet名称");
         return "hello jenkins , think ! ";
     }
 
@@ -31,6 +35,14 @@ public class Jenkins {
     public String remoteTest(){
         String remoteNameTemp = remoteName;
         return remoteNameTemp;
+    }
+
+    public static void main(String[] args) {
+        String tmpDir = System.getProperty("java.io.tmpdir");
+        System.out.println(tmpDir);
+
+
+        System.getProperty( "java.io.tmpdir");
     }
 
 }
